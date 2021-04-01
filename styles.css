@@ -1,0 +1,170 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  /* border: solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backImg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  filter: blur(8px);
+}
+
+.player {
+  /* 120 */
+  height: 100px;
+  width: 430px;
+  /* outline: solid red; */
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 2
+}
+
+.record {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background-color: white;
+  /* border: solid red; */
+  transform: translate(25px, -65px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.record-hole {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: lightgrey;
+  border: solid white;
+  position: absolute;
+}
+
+.record-image {
+  max-height: 90%;
+  max-width: 90%;
+  border-radius: 50%;
+  border: solid white;
+}
+
+.play-controls {
+  height: 70px;
+  width: 230px;
+  /* border: solid red; */
+  z-index: 1;
+  transform: translate(70px, 0px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.pause-icon {
+  height: 60px;
+  display: none;
+}
+
+.previous-track {
+  height: 50px;
+  transform: rotate(180deg);
+}
+
+.play-icon {
+  height: 50px;
+}
+
+.next-track {
+  height: 50px;
+}
+
+.track-details {
+  height: 100px;
+  width: 400px;
+  /* outline: solid red; */
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  ;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.song-info {
+  height: auto;
+  width: 200px;
+  /* border: solid red; */
+  display: flex;
+  flex-direction: column;
+  transform: translate(170px, 10px);
+}
+
+.artist {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.track-scrub {
+  height: 35px;
+  width: 200px;
+  border: solid blue;
+  transform: translate(170px, 15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.track-times {
+  height: 20px;
+  width: 100%;
+  border: solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 100%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0px, -105px);
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translate(0px, -115px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>TUNES</title>
+</head>
+
+<body>
+  <div class='container'>
+    <img class='backImg' alt="">
+    <div class='player'>
+      <div class='record'>
+        <img class='record-image' alt="">
+        <div class='record-hole'></div>
+      </div>
+    </div>
+    <div class='play-controls'>
+      <img class='previous-track' src="media/nexttrack.png" alt="" onclick='backTrack();'>
+      <img class=' pause-icon' src="media/pause.png" alt="" style='display:none' onclick="playpause(); togglePlay();">
+      <img class='play-icon' src="media/playicon.png" alt="" onclick="playpause(); togglePlay();">
+      <img class='next-track' src="media/nexttrack.png" alt="" onclick='advanceTrack();'>
+    </div>
+    <div class='track-details'>
+      <div class='song-info'>
+        <span class='artist'></span>
+        <span class='song-title'></span>
+      </div>
+      <div class='track-scrub'>
+        <div class='track-times'>
+          <span class='current-time'></span>
+          <span class='total-time'></span>
+        </div>
+        <progress class='progress-bar'></progress>
+      </div>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
