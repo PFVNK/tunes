@@ -115,10 +115,14 @@
   margin-bottom: 5px;
 }
 
+.song-title {
+  font-size: 14px;
+}
+
 .track-scrub {
   height: 35px;
   width: 200px;
-  border: solid blue;
+  /* border: solid blue; */
   transform: translate(170px, 15px);
   display: flex;
   justify-content: center;
@@ -129,14 +133,24 @@
 .track-times {
   height: 20px;
   width: 100%;
-  border: solid red;
+  /* border: solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transform: translate(0px, 5px);
 }
 
 .progress-bar {
   width: 100%;
+  color: red;
+}
+
+.current-time {
+  font-size: 12px;
+}
+
+.total-time {
+  font-size: 12px;
 }
 
 @keyframes rotate {

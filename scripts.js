@@ -32,10 +32,10 @@ document.getElementsByClassName('backImg')[0].src = allSongs[index].artwork
 //set audio based on index 
 var song = new Audio(allSongs[index].music)
 
-//get time update for audio and plug into progress bar and trac times
+//get time update for audio and plug into progress bar and track times
 let progress = document.getElementsByClassName('progress-bar')[0]
 this.song.addEventListener('timeupdate', (currentTime) => {
-  console.log(Math.floor(currentTime.timeStamp) + '/' + Math.floor(song.duration))
+  console.log(currentTime.srcElement.currentTime)
   //set total track time
   let seconds = song.duration % 60
   let minutes = parseInt(song.duration / 60)
@@ -45,16 +45,20 @@ this.song.addEventListener('timeupdate', (currentTime) => {
   document.getElementsByClassName('total-time')[0].innerHTML = `${minutes}:${Math.floor(seconds)}`
 
   //set current track time
-  let currentSec = currentTime.timeStamp % 60
-  let currentMin = parseInt(currentTime.timeStamp / 60)
+  let currentSec = parseInt(currentTime.srcElement.currentTime % 60);
+  let currentMin = parseInt((currentTime.srcElement.currentTime / 60) % 60);
+  console.log(currentSec.toString().length)
   if (currentSec.toString().length === 1) {
     currentSec = '0' + currentSec
   }
-  document.getElementsByClassName('current-time')[0].innerHTML = `${currentMin}:${Math.floor(currentSec)}`
+  if (currentMin.toString().length === 1) {
+    currentMin = '0' + currentMin
+  }
+  document.getElementsByClassName('current-time')[0].innerHTML = `${currentMin}:${currentSec}`
 
   //set progress bar
-  progress.value = `${(currentTime / song.duration) * 100}`
-})
+  progress.value = currentTime.srcElement.currentTime / song.duration
+}, false)
 
 
 //toggle wether track is playing or paused
