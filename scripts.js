@@ -106,11 +106,15 @@ function playpause() {
 
 //controls for next and previous track
 function advanceTrack() {
-  sessionStorage.setItem('idx', index + 1)
-  window.location.reload()
+  if (index < allSongs.length - 1) {
+    sessionStorage.setItem('idx', index + 1)
+    window.location.reload()
+  }
 }
 
 function backTrack() {
-  sessionStorage.setItem('idx', index - 1)
-  window.location.reload()
+  if (index > 0) {
+    sessionStorage.setItem('idx', index - 1)
+    window.location.reload()
+  }
 }
